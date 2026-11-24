@@ -1,0 +1,68 @@
+{
+  "proxy_auc": {
+    "all features (no sex)": 0.9380038527281275,
+    "without relationship & marital status": 0.8171711548540427
+  },
+  "shap_top10": {
+    "marital_status": 1.2641,
+    "age": 0.6702,
+    "capital_gain": 0.5026,
+    "education_num": 0.4455,
+    "occupation": 0.4026,
+    "hours_per_week": 0.297,
+    "relationship": 0.2242,
+    "capital_loss": 0.1443,
+    "workclass": 0.0748,
+    "race": 0.0655
+  },
+  "criteria": {
+    "LR baseline": {
+      "dp_reduction_pct": -3.769791690700708,
+      "acc_drop_pp": 2.1375396181911976,
+      "di_ok": false,
+      "success": false
+    },
+    "GBM baseline": {
+      "dp_reduction_pct": 0.0,
+      "acc_drop_pp": 0.0,
+      "di_ok": false,
+      "success": false
+    },
+    "GBM unaware (drop sex)": {
+      "dp_reduction_pct": 3.196926150849877,
+      "acc_drop_pp": 0.01474165253925186,
+      "di_ok": false,
+      "success": false
+    },
+    "GBM proxy-aware (SHAP-guided)": {
+      "dp_reduction_pct": 38.19700563895542,
+      "acc_drop_pp": 2.545883393528414,
+      "di_ok": false,
+      "success": false
+    },
+    "GBM + reweighing": {
+      "dp_reduction_pct": 40.619932944323565,
+      "acc_drop_pp": 0.5115353431119574,
+      "di_ok": false,
+      "success": false
+    },
+    "LR + ExpGrad (DP)": {
+      "dp_reduction_pct": 81.85123399518383,
+      "acc_drop_pp": 3.7930271983489305,
+      "di_ok": true,
+      "success": false
+    },
+    "GBM + ThresholdOpt (DP)": {
+      "dp_reduction_pct": 98.36404954060384,
+      "acc_drop_pp": 2.458907643546837,
+      "di_ok": true,
+      "success": false
+    },
+    "FairAudit (proposed)": {
+      "dp_reduction_pct": 80.35135626346977,
+      "acc_drop_pp": 1.83091324537481,
+      "di_ok": true,
+      "success": true
+    }
+  }
+}
